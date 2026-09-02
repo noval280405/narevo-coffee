@@ -49,6 +49,19 @@ button, .btn-primary, .btn-light { position: relative; overflow: hidden; }
 .click-ripple { position: absolute; z-index: 20; border-radius: 999px; pointer-events: none; background: rgb(255 255 255 / .42); transform: scale(0); animation: ripple-out .6s ease-out; }
 @keyframes ripple-out { to { transform: scale(1); opacity: 0; } }
 
+/* Keep dark form fields consistent when Chrome applies autofill. */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-text-fill-color: #fff !important;
+  caret-color: #fff;
+  -webkit-box-shadow: 0 0 0 1000px #3b2923 inset !important;
+  box-shadow: 0 0 0 1000px #3b2923 inset !important;
+  border-radius: 0;
+  transition: background-color 9999s ease-out 0s;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
   .scroll-reveal { opacity: 1; transform: none; }
