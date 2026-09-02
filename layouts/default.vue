@@ -1,1 +1,1 @@
-<template><div><LayoutNavbar/><main><slot/></main><LayoutFooter/><UiWhatsAppFloating/></div></template>
+<template><div><LayoutNavbar/><main><slot/></main><LayoutFooter/></div></template>
