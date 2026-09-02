@@ -1,1 +1,1 @@
-<template><div><LayoutNavbar/><main><slot/></main><LayoutFooter/></div></template>
+<template><div><LayoutNavbar/><main><slot/></main><LayoutFooter/><ClientOnly><UiMotionEffects/></ClientOnly></div></template>

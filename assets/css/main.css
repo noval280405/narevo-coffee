@@ -20,3 +20,37 @@ a, button { @apply focus-visible:outline-2 focus-visible:outline-offset-4 focus-
 .vertical-label { writing-mode: vertical-rl; }
 .page-enter-active, .page-leave-active { transition: opacity .25s ease; }
 .page-enter-from, .page-leave-to { opacity: 0; }
+
+/* Layered motion system */
+.scroll-reveal {
+  opacity: 0;
+  transform: translate3d(0, 42px, 0) rotateX(5deg);
+  transform-origin: center bottom;
+  transition: opacity .75s ease var(--reveal-delay, 0ms), transform .9s cubic-bezier(.2,.75,.2,1) var(--reveal-delay, 0ms);
+}
+.scroll-reveal.is-visible { opacity: 1; transform: translate3d(0, 0, 0) rotateX(0); }
+.tilt-card {
+  --rx: 0deg; --ry: 0deg; --mx: 50%; --my: 50%;
+  position: relative;
+  transform: perspective(1000px) rotateX(var(--rx)) rotateY(var(--ry));
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform .16s ease-out, box-shadow .3s ease, background-color .3s ease;
+}
+.tilt-card::after {
+  content: ""; position: absolute; inset: 0; z-index: 5; pointer-events: none; border-radius: inherit;
+  background: radial-gradient(circle at var(--mx) var(--my), rgb(255 255 255 / .16), transparent 38%);
+  opacity: 0; transition: opacity .25s;
+}
+.tilt-card:hover::after { opacity: 1; }
+main > div > section:first-child > img,
+main > section:first-child > img { transform: translate3d(0, var(--hero-shift, 0px), 0) scale(1.08); will-change: transform; }
+button, .btn-primary, .btn-light { position: relative; overflow: hidden; }
+.click-ripple { position: absolute; z-index: 20; border-radius: 999px; pointer-events: none; background: rgb(255 255 255 / .42); transform: scale(0); animation: ripple-out .6s ease-out; }
+@keyframes ripple-out { to { transform: scale(1); opacity: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+  .scroll-reveal { opacity: 1; transform: none; }
+  .tilt-card, main > div > section:first-child > img, main > section:first-child > img { transform: none !important; }
+}
