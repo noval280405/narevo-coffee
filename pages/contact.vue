@@ -10,7 +10,21 @@ useSeoMeta({
   twitterTitle: title,
   twitterDescription: description,
 });
-const subject = ref("General inquiry");
+const form = reactive({
+  name: "",
+  email: "",
+  subject: "General inquiry",
+  message: "",
+});
+
+function sendMessage() {
+  const message = `Halo Narevo Coffee,\n\nNama: ${form.name}\nEmail: ${form.email}\nTopik: ${form.subject}\n\n${form.message}`;
+  window.open(
+    `https://wa.me/6281200000000?text=${encodeURIComponent(message)}`,
+    "_blank",
+    "noopener,noreferrer",
+  );
+}
 </script>
 <template>
   <div>
@@ -49,9 +63,7 @@ const subject = ref("General inquiry");
           </div>
           <form
             class="p-8 md:p-12"
-            action="mailto:hello@narevocoffee.com"
-            method="post"
-            enctype="text/plain"
+            @submit.prevent="sendMessage"
           >
             <div class="mb-9">
               <p class="text-xs uppercase tracking-[.25em] text-caramel">
@@ -62,14 +74,18 @@ const subject = ref("General inquiry");
             <div class="grid gap-6 sm:grid-cols-2">
               <label class="grid gap-2 text-xs text-white/50"
                 >Your name<input
+                  v-model="form.name"
                   name="name"
+                  autocomplete="name"
                   required
                   class="border-b border-white/20 bg-transparent py-3 text-base text-white outline-none transition focus:border-caramel"
                   placeholder="Nama lengkap" /></label
               ><label class="grid gap-2 text-xs text-white/50"
                 >Email address<input
+                  v-model="form.email"
                   name="email"
                   type="email"
+                  autocomplete="email"
                   required
                   class="border-b border-white/20 bg-transparent py-3 text-base text-white outline-none transition focus:border-caramel"
                   placeholder="email@example.com"
@@ -77,7 +93,7 @@ const subject = ref("General inquiry");
             </div>
             <label class="mt-7 grid gap-2 text-xs text-white/50"
               >I want to talk about<select
-                v-model="subject"
+                v-model="form.subject"
                 name="subject"
                 class="border-b border-white/20 bg-coffee py-3 text-base text-white outline-none focus:border-caramel"
               >
@@ -88,6 +104,7 @@ const subject = ref("General inquiry");
               </select></label
             ><label class="mt-7 grid gap-2 text-xs text-white/50"
               >Your message<textarea
+                v-model="form.message"
                 name="message"
                 required
                 rows="4"
@@ -95,9 +112,10 @@ const subject = ref("General inquiry");
                 placeholder="Tulis pesan Anda..."
               ></textarea></label
             ><button
+              type="submit"
               class="mt-9 inline-flex min-h-12 items-center rounded-full bg-white px-7 text-sm font-semibold text-coffee transition hover:bg-caramel hover:text-white"
             >
-              Send Message →
+              Send via WhatsApp →
             </button>
           </form>
         </div>
