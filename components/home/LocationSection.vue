@@ -1,13 +1,101 @@
 <script setup lang="ts">
-const facilities = ['Fast Wi-Fi', 'Power outlets', 'Indoor & outdoor', 'Parking area']
+const facilities = [
+  "Fast Wi-Fi",
+  "Power outlets",
+  "Indoor & outdoor",
+  "Parking area",
+];
 </script>
-<template><section id="location" class="section-space bg-milk"><div class="container-site">
-  <div class="relative overflow-hidden rounded-[2.5rem] bg-coffee text-white">
-    <div class="absolute -right-24 -top-24 h-80 w-80 rounded-full border border-white/10"></div>
-    <div class="grid lg:grid-cols-[.82fr_1.18fr]">
-      <div class="relative flex flex-col justify-between p-8 sm:p-12 lg:p-14"><div><div class="mb-7 flex items-center gap-3"><span class="grid h-10 w-10 place-items-center rounded-full border border-white/20 text-caramel">⌖</span><p class="text-xs uppercase tracking-[.28em] text-caramel">Find Your Way</p></div><h2 class="font-display text-5xl md:text-6xl">Visit<br>Narevo.</h2><p class="mt-8 text-lg font-semibold">Narevo Coffee</p><p class="mt-2 leading-7 text-white/55">Jl. Boulevard Narevo No. 10<br>Tangerang, Banten</p><div class="mt-9 flex flex-wrap gap-3"><a href="https://maps.google.com/?q=Tangerang+Banten" target="_blank" class="btn-light">Get Direction ↗</a><a href="https://wa.me/6281200000000" target="_blank" class="inline-flex min-h-12 items-center px-4 text-sm text-white/60 transition hover:text-white">Ask us first →</a></div></div><p class="mt-12 border-t border-white/15 pt-5 text-xs leading-5 text-white/40">Alamat masih merupakan data contoh dan dapat diganti dengan lokasi asli Narevo Coffee.</p></div>
-      <div class="relative min-h-[520px] overflow-hidden bg-cream"><iframe class="absolute inset-0 h-full w-full grayscale-[25%] contrast-[.92]" title="Peta lokasi Narevo Coffee" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Tangerang%2C%20Banten&output=embed"></iframe><div class="pointer-events-none absolute bottom-5 left-5 right-5 flex items-center justify-between rounded-2xl bg-milk/95 p-4 text-coffee shadow-xl backdrop-blur sm:left-auto sm:w-72"><div><p class="text-[10px] uppercase tracking-widest text-caramel">Destination</p><strong class="mt-1 block font-display text-lg">Narevo Coffee</strong></div><span class="grid h-10 w-10 place-items-center rounded-full bg-coffee text-white">N</span></div></div>
+<template>
+  <section id="location" class="section-space bg-milk">
+    <div class="container-site">
+      <div
+        class="relative overflow-hidden rounded-[2.5rem] bg-coffee text-white"
+      >
+        <div
+          class="absolute -right-24 -top-24 h-80 w-80 rounded-full border border-white/10"
+        ></div>
+        <div class="grid lg:grid-cols-[.82fr_1.18fr]">
+          <div
+            class="relative flex flex-col justify-between p-8 sm:p-12 lg:p-14"
+          >
+            <div>
+              <div class="mb-7 flex items-center gap-3">
+                <span
+                  class="grid h-10 w-10 place-items-center rounded-full border border-white/20 text-caramel"
+                  >⌖</span
+                >
+                <p class="text-xs uppercase tracking-[.28em] text-caramel">
+                  Find Your Way
+                </p>
+              </div>
+              <h2 class="font-display text-5xl md:text-6xl">
+                Visit<br />Narevo.
+              </h2>
+              <p class="mt-8 text-lg font-semibold">Narevo Coffee</p>
+              <p class="mt-2 leading-7 text-white/55">
+                Jl. Boulevard Narevo No. 10<br />Tangerang, Banten
+              </p>
+              <div class="mt-9 flex flex-wrap gap-3">
+                <a
+                  href="https://maps.google.com/?q=Tangerang+Banten"
+                  target="_blank"
+                  class="btn-light"
+                  >Get Direction ↗</a
+                ><a
+                  href="https://wa.me/6281200000000"
+                  target="_blank"
+                  class="inline-flex min-h-12 items-center px-4 text-sm text-white/60 transition hover:text-white"
+                  >Ask us first →</a
+                >
+              </div>
+            </div>
+            <p
+              class="mt-12 border-t border-white/15 pt-5 text-xs leading-5 text-white/40"
+            >
+              Alamat masih merupakan data contoh dan dapat diganti dengan lokasi
+              asli Narevo Coffee.
+            </p>
+          </div>
+          <div class="relative min-h-[520px] overflow-hidden bg-cream">
+            <iframe
+              class="absolute inset-0 h-full w-full grayscale-[25%] contrast-[.92]"
+              title="Peta lokasi Narevo Coffee"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=Tangerang%2C%20Banten&output=embed"
+            ></iframe>
+            <div
+              class="pointer-events-none absolute bottom-5 left-5 right-5 flex items-center justify-between rounded-2xl bg-milk/95 p-4 text-coffee shadow-xl backdrop-blur sm:left-auto sm:w-72"
+            >
+              <div>
+                <p class="text-[10px] uppercase tracking-widest text-caramel">
+                  Destination
+                </p>
+                <strong class="mt-1 block font-display text-lg"
+                  >Narevo Coffee</strong
+                >
+              </div>
+              <span
+                class="grid h-10 w-10 place-items-center rounded-full bg-coffee text-white"
+                >N</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <div
+          v-for="(facility, index) in facilities"
+          :key="facility"
+          class="flex items-center gap-4 rounded-2xl border border-coffee/10 bg-white/40 p-5"
+        >
+          <span class="text-xs text-caramel">0{{ index + 1 }}</span
+          ><strong class="text-sm font-medium text-coffee">{{
+            facility
+          }}</strong>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4"><div v-for="(facility, index) in facilities" :key="facility" class="flex items-center gap-4 rounded-2xl border border-coffee/10 bg-white/40 p-5"><span class="text-xs text-caramel">0{{ index + 1 }}</span><strong class="text-sm font-medium text-coffee">{{ facility }}</strong></div></div>
-</div></section></template>
+  </section>
+</template>

@@ -10,7 +10,9 @@ export default defineNuxtConfig({
     title: 'Narevo Coffee Tangerang | Coffee & Space',
     meta: [
       { name: 'description', content: 'Nikmati coffee, signature drinks, makanan, dan dessert di Narevo Coffee, coffee shop modern dan nyaman di Tangerang.' },
-      { name: 'theme-color', content: '#3B2923' }
+      { name: 'theme-color', content: '#3B2923' },
+      { name: 'robots', content: 'index, follow, max-image-preview:large' },
+      { name: 'author', content: 'Narevo Coffee' }
     ],
     link: [
       { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
