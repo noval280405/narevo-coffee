@@ -1,0 +1,4 @@
+<template><section id="location" class="section-space bg-milk"><div class="container-site grid overflow-hidden rounded-[2rem] bg-coffee text-white lg:grid-cols-2">
+  <div class="p-8 sm:p-12 lg:p-16"><p class="mb-4 text-xs uppercase tracking-[.28em] text-caramel">Find Your Way</p><h2 class="font-display text-5xl">Visit Narevo</h2><p class="mt-8 text-lg font-semibold">Narevo Coffee</p><p class="mt-2 leading-7 text-white/60">Jl. Boulevard Narevo No. 10<br>Tangerang, Banten</p><a href="https://maps.google.com/?q=Tangerang+Banten" target="_blank" class="btn-light mt-9">Get Direction ↗</a></div>
+  <iframe class="min-h-[420px] w-full grayscale-[20%]" title="Peta lokasi Narevo Coffee" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Tangerang%2C%20Banten&output=embed"></iframe>
+</div></section></template>

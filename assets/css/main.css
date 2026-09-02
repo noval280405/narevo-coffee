@@ -1,0 +1,22 @@
+@import "tailwindcss";
+@theme {
+  --color-coffee: #3b2923; --color-caramel: #b9825a; --color-cream: #f6f1ea;
+  --color-milk: #fffdfc; --color-ink: #1e1917;
+  --font-display: "Playfair Display", serif; --font-sans: "Inter", sans-serif;
+}
+html { scroll-behavior: smooth; }
+body { @apply bg-cream text-ink font-sans antialiased; }
+a, button { @apply focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-caramel; }
+::selection { @apply bg-caramel text-white; }
+.container-site { @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12; }
+.eyebrow { @apply mb-4 text-xs font-semibold uppercase tracking-[.28em] text-caramel; }
+.section-title { @apply font-display text-4xl leading-tight text-coffee md:text-5xl lg:text-6xl; }
+.section-space { @apply py-20 md:py-28; }
+.btn-primary { @apply inline-flex min-h-12 items-center justify-center rounded-full bg-coffee px-7 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-caramel; }
+.btn-light { @apply inline-flex min-h-12 items-center justify-center rounded-full border border-white/40 px-7 text-sm font-semibold text-white transition hover:bg-white hover:text-coffee; }
+.image-cover { @apply h-full w-full object-cover; }
+@keyframes float-in { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+.reveal { animation: float-in .7s ease-out both; }
+.vertical-label { writing-mode: vertical-rl; }
+.page-enter-active, .page-leave-active { transition: opacity .25s ease; }
+.page-enter-from, .page-leave-to { opacity: 0; }

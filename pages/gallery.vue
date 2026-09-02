@@ -1,0 +1,2 @@
+<script setup lang="ts">useSeoMeta({ title: 'Moments at Narevo | Gallery' })</script>
+<template><div><UiPageHero eyebrow="Narevo Journal" title="Moments Worth Keeping." description="Sudut nyaman, aroma kopi, dan cerita orang-orang yang mengisi ruang Narevo setiap harinya." image="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=2000&q=85" index="03"/><HomeGallerySection/></div></template>

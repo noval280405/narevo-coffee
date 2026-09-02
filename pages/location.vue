@@ -1,0 +1,2 @@
+<script setup lang="ts">useSeoMeta({ title: 'Lokasi & Jam Buka | Narevo Coffee' })</script>
+<template><div><UiPageHero eyebrow="Come Say Hello" title="Your Table Is Waiting." description="Temukan kami di Tangerang. Datang untuk kopinya, tinggal lebih lama untuk suasananya." image="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=2000&q=85" index="04"/><HomeOpeningHours/><HomeLocationSection/></div></template>

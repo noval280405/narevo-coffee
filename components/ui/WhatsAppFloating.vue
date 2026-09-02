@@ -1,0 +1,1 @@
+<template><a href="https://wa.me/6281200000000?text=Halo%20Narevo%20Coffee%2C%20saya%20mendapatkan%20informasi%20dari%20website." target="_blank" aria-label="Hubungi Narevo lewat WhatsApp" class="fixed bottom-5 right-5 z-40 grid h-14 w-14 place-items-center rounded-full bg-[#25D366] text-xl font-bold text-white shadow-xl transition hover:-translate-y-1">✆</a></template>

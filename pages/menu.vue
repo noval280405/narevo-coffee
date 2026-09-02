@@ -1,0 +1,2 @@
+<script setup lang="ts">useSeoMeta({ title: 'Menu & Harga | Narevo Coffee', description: 'Lihat menu kopi, signature drinks, non-coffee, makanan, dan dessert Narevo Coffee.' })</script>
+<template><div><UiPageHero eyebrow="Sip, Taste, Enjoy" title="Made to Match Your Mood." description="Dari espresso klasik sampai signature creations—temukan rasa yang tepat untuk momenmu hari ini." image="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=2000&q=85" index="02"/><HomeMenuSection/></div></template>
